@@ -15,6 +15,12 @@ async function generateSvg() {
             type: 'input',
             name: 'text',
             message: 'Please enter any three characters for the logo',
+            validate: function (input) {
+              if (input.length !== 3) {
+                return 'Please enter exactly three characters.';
+              }
+              return true;
+            },
           },
           {
             type: 'input',
@@ -46,7 +52,7 @@ async function generateSvg() {
     }
 
     fs.writeFileSync('./example.svg', svgContent, 'utf-8');
-    console.log('SVG generated!');
+    console.log('Generated logo.svg');
   } catch (error) {
     console.error(error);
   }
