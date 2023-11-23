@@ -51,7 +51,7 @@ async function generateSvg() {
       svgContent = userShapeInstance.generateSvg();
     }
 
-    fs.writeFileSync('./example.svg', svgContent, 'utf-8');
+    fs.writeFileSync('./logo.svg', svgContent, 'utf-8');
     console.log('Generated logo.svg');
   } catch (error) {
     console.error(error);
